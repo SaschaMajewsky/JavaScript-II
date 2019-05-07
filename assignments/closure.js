@@ -3,7 +3,8 @@
 const cat = 'kittie';
 function returnCat () {
 let inside_variable = 'so much private';
-return cat;
+let cat_variable = cat;
+return cat_variable;
 }
 console.log(returnCat());
 /* console.log(inside_variable); */ //is not defined bercause the variable in within the function scope
