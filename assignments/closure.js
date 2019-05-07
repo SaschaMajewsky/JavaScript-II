@@ -1,6 +1,12 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
-
+const cat = 'kittie';
+function returnCat () {
+let inside_variable = 'so much private';
+return cat;
+}
+console.log(returnCat());
+/* console.log(inside_variable); */ //is not defined bercause the variable in within the function scope
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
