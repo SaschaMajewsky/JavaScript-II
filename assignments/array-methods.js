@@ -91,8 +91,8 @@ console.log(largeShirts);
 
 // ==== Challenge 4: Use .reduce() ====
 // The donations need to be tallied up and reported for tax purposes. Add up all the donations into a ticketPriceTotal array and log the result
-const ticketPriceTotal = runners.reduce((acc, currentValue) => {
-    return acc += currentValue.donation;
+const ticketPriceTotal = runners.reduce((acc, currentPerson) => {
+    return acc += currentPerson.donation;
     }, 0);
 
 console.log(ticketPriceTotal);
@@ -101,7 +101,24 @@ console.log(ticketPriceTotal);
 // Now that you have used .forEach(), .map(), .filter(), and .reduce().  I want you to think of potential problems you could solve given the data set and the 5k fun run theme.  Try to create and then solve 3 unique problems using one or many of the array methods listed above.
 
 // Problem 1
+//Show each name of the student and how much they donated in USD notation.
+const studentDonation = runners.map((person) => {
+    return `${person.first_name} ${person.donation}.00 USD`;
+    });
 
+console.log(studentDonation);
 // Problem 2
+//There was an error with sending out some emails to students, we need info about all students with an email from the provider yale.edu. Quick! We need to get this fixxed.
+const studentEmailFromYale = runners.filter((person) => {
+    return person.email.includes('yale.edu');
+    });
 
+console.log(studentEmailFromYale);
 // Problem 3
+// We need a list of all students with their name and their donations next to it as an Array containing each of them in an object.
+
+const sortedDonations = runners.map((person) => {
+    return { name: `${person.first_name}`, donation: `${person.donation}`};
+    });
+
+console.log(sortedDonations);

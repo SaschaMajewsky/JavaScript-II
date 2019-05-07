@@ -143,4 +143,14 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  return cb(array)
 }
+
+const itemsCheated = ['Notebook', 'Pencil','Gum', 'Pencil', 'Notebook', 'yo-yo', 'Gum', 'Notebook'];
+
+removeDuplicates(itemsCheated, function(array) {
+  console.log(array.filter((value, index, self) => self.indexOf(value) === index
+    ));
+});
+
+
