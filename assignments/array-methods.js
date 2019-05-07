@@ -65,27 +65,21 @@ const runners = [{"id":1,"first_name":"Charmain","last_name":"Seiler","email":"c
 
 const fullName = []
 
-runners.forEach((person) => {
-    fullName.push(`${person.first_name} ${person.last_name}`);
-    });
+runners.forEach(person => fullName.push(`${person.first_name} ${person.last_name}`));
 
 console.log(fullName);
 
 // ==== Challenge 2: Use .map() ====
 // The event director needs to have all the runner's first names converted to uppercase because the director BECAME DRUNK WITH POWER. Convert each first name into all caps and log the result
 
-const allCaps = runners.map((person) => {
-    return `${person.first_name.toUpperCase()}`;
-    });
+const allCaps = runners.map(person => `${person.first_name.toUpperCase()}`);
 
 console.log(allCaps); 
 
 // ==== Challenge 3: Use .filter() ====
 // The large shirts won't be available for the event due to an ordering issue.  Get a list of runners with large sized shirts so they can choose a different size. Return an array named largeShirts that contains information about the runners that have a shirt size of L and log the result
 
-const largeShirts = runners.filter((person) => {
-    return person.shirt_size === 'L';
-    });
+const largeShirts = runners.filter(person => person.shirt_size === 'L');
 
 console.log(largeShirts);
 
@@ -102,23 +96,19 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 //Show each name of the student and how much they donated in USD notation.
-const studentDonation = runners.map((person) => {
-    return `${person.first_name} ${person.donation}.00 USD`;
-    });
+const studentDonation = runners.map(person => `${person.first_name} ${person.donation}.00 USD`);
 
 console.log(studentDonation);
 // Problem 2
 //There was an error with sending out some emails to students, we need info about all students with an email from the provider yale.edu. Quick! We need to get this fixxed.
-const studentEmailFromYale = runners.filter((person) => {
-    return person.email.includes('yale.edu');
-    });
+const studentEmailFromYale = runners.filter(person => person.email.includes('yale.edu'));
 
 console.log(studentEmailFromYale);
 // Problem 3
 // We need a list of all students with their name and their donations next to it as an Array containing each of them in an object.
 
-const sortedDonations = runners.map((person) => {
+const DonationsAsJSON = runners.map((person) => {
     return { name: `${person.first_name}`, donation: `${person.donation}`};
     });
 
-console.log(sortedDonations);
+console.log(DonationsAsJSON);
